@@ -24,11 +24,51 @@ footer{
 body{
     padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100vh;    
+    width: 100%;    
+    height: 100vh;
     display: grid;
-    grid-template: 1fr 70px / 1fr;
-    align-items: center;    
+    grid-template: 1fr 50px / 1fr;        
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.card{    
+    border: 1px solid red;
+    width: 50%;    
+    display: grid;    
+    grid-template: repeat(3, 1fr) / 2fr 3fr;
+    grid-template-areas: "img title"
+                         "img des"
+                         "img av";
+}
+
+.card-img{        
+    grid-area: img;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.title{
+    grid-area: title;
+}
+.description{
+    grid-area: des;
+}
+.avatar{
+    grid-area: av;    
+    display: flex;    
+    border-radius: 50%;
+    
+}
+
+.avatar-img{    
+    width: 50px;    
+    height: 50px;
 }
 
 .attribution { 
@@ -38,3 +78,5 @@ body{
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+
