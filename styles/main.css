@@ -28,6 +28,8 @@ body{
     height: 100vh;
     display: grid;
     grid-template: 1fr 50px / 1fr;        
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
 }
 main{
     display: flex;
@@ -37,46 +39,137 @@ main{
 }
 
 .card{    
-    border: 1px solid red;
+    border: none;    
+    border-radius: 20px;
     width: 50%;    
+    max-width: 780px;
+    min-width: 700px;    
+    background-color: white;
+    color: hsl(217, 19%, 35%);
+    box-shadow: 0 0 20px 1px hsl(212, 23%, 69%);
+    
     display: grid;    
-    grid-template: repeat(3, 1fr) / 2fr 3fr;
-    grid-template-areas: "img title"
-                         "img des"
-                         "img av";
+    grid-template: 1.5fr 1fr 0.5/ 1fr 1fr 1fr 1fr 1fr;    
+    grid-template-areas: "img img img title title"
+                         "img img img des des"
+                         "img img img av av";
 }
 
 .card-img{        
-    grid-area: img;
-    object-fit: cover;
+    grid-area: img;    
     width: 100%;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.card-img img{
+    width: inherit;    
+    height: inherit;
+    object-fit: cover;     
 }
 
 .title{
     grid-area: title;
+    padding: 35px 65px 0 50px;
+    font-weight: 700;    
+    margin: 0;
 }
 .description{
     grid-area: des;
+    padding: 10px 50px;
+    font-weight: 500;
+    margin: 0;    
 }
-.avatar{
+.avatar{    
+    position: relative;
     grid-area: av;    
+    display: flex;        
+    justify-content: space-between;
+    padding: 10px 40px 35px 50px;
+    margin: 0;
+}
+
+.user{
     display: flex;    
-    border-radius: 50%;
-    
 }
 
 .avatar-img{    
     width: 50px;    
-    height: 50px;
+    height: 50px;    
+    border-radius: 50%;    
+    overflow: hidden;    
+}
+.info{
+    margin-left: 10px;
 }
 
-.attribution { 
+
+.info .name{
+    margin: 0;
+    
+}
+
+.info .date{
+    margin: 0;
+}
+.avatar-img img{
+    width: inherit;        
+}
+
+.share{    
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-image: url(/images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+.share:hover{
+    transform: scale(1.2);
+}
+
+.flotante{   
+    left: 60%;
+    bottom: 115%;
+    position: absolute;             
+    width: 200px;
+    height: 20px;    
+    background-color: hsl(217, 19%, 35%);     
+    width: 52%;   
+    height: 60%;
+    box-shadow: 0 0 20px 1px hsl(212, 23%, 69%);
+    border-radius: 15px;
+}
+
+ .flotante::before{    
+    content: "";    
+    position: absolute;
+    top: 99%;
+    left: 45%;
+    width: 0; 
+    height: 0;  
+    border-right: 12px solid transparent;  
+    border-left: 12px solid transparent;
+    border-top: 12px solid hsl(217, 19%, 35%);        
+} 
+footer{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.attribution {     
     font-size: 11px; text-align: center; 
 }
     
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
 
 
