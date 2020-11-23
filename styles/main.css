@@ -16,6 +16,47 @@
     border-left: 25px solid transparent;
     border-top: 40px solid red;    
 } */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?5qrt4v');
+    src:  url('fonts/icomoon.eot?5qrt4v#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?5qrt4v') format('truetype'),
+      url('fonts/icomoon.woff?5qrt4v') format('woff'),
+      url('fonts/icomoon.svg?5qrt4v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-redo:before {
+    content: "\e900";
+  }
+  .icon-pinterest:before {
+    content: "\e901";
+  }
+  .icon-twitter:before {
+    content: "\e902";
+  }
+  .icon-facebook:before {
+    content: "\e904";
+  }
+  
+  /* Icons */
 main, 
 footer{
     width: 100%;
@@ -121,17 +162,22 @@ main{
 .share{    
     border-radius: 50%;
     border: none;
-    outline: none;
-    background-image: url(/images/icon-share.svg);
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;
+    outline: none;    
     width: 35px;
     height: 35px;
+    font-size: 1.2em;
+    background-color: hsl(210, 46%, 95%);
+    color: hsl(217, 19%, 35%); 
 }
 
+.share-clicked{
+    color: hsl(210, 46%, 95%);
+    background-color: hsl(217, 19%, 35%); 
+}
+
+
 .share:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .flotante{   
@@ -145,6 +191,18 @@ main{
     height: 60%;
     box-shadow: 0 0 20px 1px hsl(212, 23%, 69%);
     border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms 100ms ease;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;            
+}
+
+.flotante-open{
+    visibility: visible;
+    opacity: 1;
 }
 
  .flotante::before{    
@@ -157,6 +215,24 @@ main{
     border-right: 12px solid transparent;  
     border-left: 12px solid transparent;
     border-top: 12px solid hsl(217, 19%, 35%);        
+    
+}
+.modal-content{
+    font-size: 20px;
+    color: hsl(210, 46%, 95%);
+    margin: 0 5px;
+}
+
+.word{
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+ 
+
+.icon{
+    text-decoration: none;
+    
 } 
 footer{
     display: flex;    
