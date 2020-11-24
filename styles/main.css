@@ -81,8 +81,8 @@ main{
 
 .card{    
     border: none;    
-    border-radius: 20px;
-    width: 50%;    
+    border-radius: 10px;
+    width: 55%;    
     max-width: 780px;
     min-width: 700px;    
     background-color: white;
@@ -90,10 +90,10 @@ main{
     box-shadow: 0 0 20px 1px hsl(212, 23%, 69%);
     
     display: grid;    
-    grid-template: 1.5fr 1fr 0.5/ 1fr 1fr 1fr 1fr 1fr;    
-    grid-template-areas: "img img img title title"
-                         "img img img des des"
-                         "img img img av av";
+    grid-template: 1.5fr 1fr 0.5fr/ 2fr 3.5fr;    
+    grid-template-areas: "img title"
+                         "img des"
+                         "img av";
 }
 
 .card-img{        
@@ -167,12 +167,12 @@ main{
     height: 35px;
     font-size: 1.2em;
     background-color: hsl(210, 46%, 95%);
-    color: hsl(217, 19%, 35%); 
+    color: hsl(214, 17%, 51%); 
 }
 
 .share-clicked{
     color: hsl(210, 46%, 95%);
-    background-color: hsl(217, 19%, 35%); 
+    background-color: hsl(214, 17%, 51%); 
 }
 
 
@@ -190,7 +190,7 @@ main{
     width: 52%;   
     height: 60%;
     box-shadow: 0 0 20px 1px hsl(212, 23%, 69%);
-    border-radius: 15px;
+    border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     transition: 300ms 100ms ease;
@@ -247,5 +247,87 @@ footer{
     color: hsl(228, 45%, 44%); 
 }
 
+@media screen and (max-width: 768px){
+    body{    
+        
+    }
+    .card{
+        width: 369px;                
+        height: 70%;
+        min-width: auto;
+        grid-template: 2fr 1.3fr 1fr 0.5fr/ 1fr;    
+        grid-template-areas: "img"
+                         "title"
+                         "des"
+                         "av";
 
+        }
+    
+        .card-img{
+            border-bottom-left-radius: initial;
+            border-top-right-radius: inherit;
+        }
 
+        .flotante{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;            
+            border-top-left-radius: initial;
+            border-top-right-radius: initial;            
+        }
+
+        .flotante::before{
+            border: none;
+            z-index: 2;
+        }
+
+        .share{         
+            z-index: 1;
+        }
+
+        .avatar{
+            padding-bottom: 20px;
+            padding-top: 10px;
+            align-items: center;
+        }
+}
+
+@media screen and (max-width: 375px){
+    body{
+        font-size: 10.3px;
+    }
+    .card{
+        width: 85%;        
+    }
+
+    .title{        
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-bottom: 0;
+    }
+
+    .description{
+        font-size: 12px;
+        padding: 0 47px 10px 35px;                
+    }
+
+    .modal-content{
+        font-size: 15px;    
+    }
+    
+    .word{
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 100;
+    }
+
+    .share{         
+      width: 28px;
+      height: 28px;
+    }
+
+    .avatar{
+        padding-left: 35px;
+    }
+}
